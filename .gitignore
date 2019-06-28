@@ -4,7 +4,6 @@
 
 *.gz
 
-*.ipynb
 
 *.coverage
 
