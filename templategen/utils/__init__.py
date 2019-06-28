@@ -1,4 +1,5 @@
 from plotly import graph_objs as go
+from .colors import GRAY27
 
 colorscale_parent_paths = [
     ('histogram2dcontour',),
@@ -158,8 +159,9 @@ def initialize_template(annotation_defaults,
 
     # Bar outline
     template.data.bar = [
-        {'marker': {'line': {'width': 0.5, 'color': panel_background_clr}}}]
+        {'marker': {'line': {'width': 0.5, 'color': panel_background_clr}},
+         'error_y': {'color': GRAY27},  # Changing marker line color also affects error color, so reset defaults
+         'error_x': {'color': GRAY27}}]
     template.data.barpolar = [
         {'marker': {'line': {'width': 0.5, 'color': panel_background_clr}}}]
-
     return template
